@@ -46,6 +46,7 @@ header {
     left: 50%;
 }
 
+
 .nav li {
     float: left;
     width: 80px;
@@ -53,6 +54,31 @@ header {
     line-height: 60px;
     font-size: 14px;
     list-style: none;
+    text-align: center;
+    /*display: inline-block;*/
+}
+
+.nav li:nth-of-type(2):hover~.move{
+    left: 20%;
+}
+.nav li:nth-of-type(3):hover~.move{
+    left: 40%;
+}
+.nav li:nth-of-type(4):hover~.move{
+    left: 60%;
+}
+.nav li:nth-of-type(5):hover~.move{
+    left: 80%;
+}
+
+.nav .move{
+    border: 2px solid #E53C3C;
+    box-sizing: border-box;
+    height: 0;
+    position: absolute;
+    top:56px;
+    transition: left 0.4s ease-in-out;
+    /*-webkit-transition: left 0.4s ease-in-out;*/
 }
 
 .avator {
@@ -226,46 +252,46 @@ header {
     color: white;
 }
 
-.part3 input[type="radio"]:nth-of-type(1):checked~ .options .option-1 ul {
+.part3 input[type="radio"]:nth-of-type(1):checked ~ .options .option-1 ul {
     display: block;
     border: 2px solid #AE7271;
     border-top: none;
     position: relative;
-    top:-2px;
+    top: -2px;
     left: -2px;
 }
 
-.part3 input[type="radio"]:nth-of-type(1):checked~ .options .option-1 {
+.part3 input[type="radio"]:nth-of-type(1):checked ~ .options .option-1 {
     box-sizing: border-box;
     border: 2px solid #AE7271;
     border-bottom: none;
 }
 
-.part3 input[type="radio"]:nth-of-type(2):checked~ .options .option-2 ul {
+.part3 input[type="radio"]:nth-of-type(2):checked ~ .options .option-2 ul {
     display: block;
     border: 2px solid #AE7271;
     border-top: none;
     position: relative;
-    top:-2px;
+    top: -2px;
     left: -2px;
 }
 
-.part3 input[type="radio"]:nth-of-type(2):checked~ .options .option-2 {
+.part3 input[type="radio"]:nth-of-type(2):checked ~ .options .option-2 {
     box-sizing: border-box;
     border: 2px solid #AE7271;
     border-bottom: none;
 }
 
-.part3 input[type="radio"]:nth-of-type(3):checked~ .options .option-3 ul {
+.part3 input[type="radio"]:nth-of-type(3):checked ~ .options .option-3 ul {
     display: block;
     border: 2px solid #AE7271;
     border-top: none;
     position: relative;
-    top:-2px;
+    top: -2px;
     left: -2px;
 }
 
-.part3 input[type="radio"]:nth-of-type(3):checked~ .options .option-3 {
+.part3 input[type="radio"]:nth-of-type(3):checked ~ .options .option-3 {
     box-sizing: border-box;
     border: 2px solid #AE7271;
     border-bottom: none;
@@ -316,14 +342,14 @@ header {
 }
 
 /*part 4*/
-.part4{
+.part4 {
     height: 500px;
     width: 100%;
     background: #EDEAEA;
     text-align: center;
 }
 
-.part4 .container{
+.part4 .container {
     display: flex;
     align-items: flex-start;
     align-content: center;
@@ -332,51 +358,51 @@ header {
     padding-top: 80px;
 }
 
-.part4 .container>div{
+.part4 .container > div {
     /*margin: 20px;*/
-    width:20%;
-    height:400px;
+    width: 20%;
+    height: 400px;
 }
 
-.part4 img{
+.part4 img {
     height: 300px;
 }
 
-.part4 .message{
+.part4 .message {
     height: 90px;
     padding-top: 10px;
 }
 
-.part4 .message p{
+.part4 .message p {
     margin-bottom: 10px;
 }
 
-.part4 .message p:nth-child(1){
+.part4 .message p:nth-child(1) {
     font-size: 14px;
     color: #312c2c;
 }
 
-.part4 .message p:nth-child(2){
+.part4 .message p:nth-child(2) {
     font-size: 12px;
     color: #B3AFAC;
 }
 
-.part4 #shanghai .message{
+.part4 #shanghai .message {
     height: 50px;
     padding-top: 0;
     /*text-align: center;*/
 }
 
-.part4 #shanghai .message p:nth-child(1){
+.part4 #shanghai .message p:nth-child(1) {
     font-size: 24px;
     line-height: 32px;
     vertical-align: center;
     margin-bottom: 0;
     letter-spacing: 30px;
-    text-indent:1em;
+    text-indent: 1em;
 }
 
-.part4 #shanghai .message p:nth-child(2){
+.part4 #shanghai .message p:nth-child(2) {
     font-size: 12px;
     line-height: 16px;
     vertical-align: center;
@@ -384,12 +410,12 @@ header {
 }
 
 /*part5*/
-.part5{
+.part5 {
     height: 560px;
 
 }
 
-.part5 .message{
+.part5 .message {
     /*position: absolute;*/
     /*top: 50%;*/
     /*transform: translateY(-50%);*/
@@ -405,7 +431,7 @@ header {
     margin: auto;
 }
 
-.part5 .left{
+.part5 .left {
     width: 68%;
     height: 100%;
     background-image: url("../images/pic07.jpg");
@@ -415,7 +441,7 @@ header {
     position: relative;
 }
 
-.part5 .right{
+.part5 .right {
     background: white;
     width: 32%;
     height: 100%;
@@ -423,51 +449,425 @@ header {
     float: left;
 }
 
-.part5 .left p{
+.part5 .left p {
     color: white;
     text-align: center;
 }
 
-.part5 .left p:nth-child(1){
+.part5 .left p:nth-child(1) {
     font-size: 50px;
     line-height: 50px;
 }
 
-.part5 .left p:nth-child(2){
+.part5 .left p:nth-child(2) {
     font-size: 150px;
     line-height: 150px;
 }
 
-.part5 .left p:nth-child(3){
+.part5 .left p:nth-child(3) {
     font-size: 30px;
     line-height: 30px;
     margin-bottom: 30px;
 }
 
-.part5 .left p:nth-child(4){
+.part5 .left p:nth-child(4) {
     font-size: 30px;
     line-height: 30px;
     margin-bottom: 30px;
 }
 
-.part5 .left::after{
+.part5 .left::after {
     content: "";
     border: 30px solid;
     border-color: transparent white transparent transparent;
     position: absolute;
     /*left: -66%;*/
-    right:0;
-    top:50%;
-    transform:translateY(-50%);
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.part5 .right p{
+.right {
+    text-align: center;
+}
+
+.right .wrapper {
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 170px;
+}
+
+.part5 .right .wrapper div p:last-child {
+    font-size: 14px;
+    color: #B3AFAC;
+    text-align: left;
+    margin-bottom: 60px;
+    line-height: 25px;
+}
+
+.part5 .right .wrapper div p:first-child {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.part5 .right span {
+    font-size: 20px;
+    color: #BE4F48;
+}
+
+.right .wrapper input {
+    width: 100px;
+    height: 35px;
+    border: 1px solid #BE4F48;
+    color: #BE4F48;
+    background: white;
     font-size: 14px;
 }
 
-.part5 .right span{
-    font-size: 15px;
-    color: red;
+.right .wrapper input:hover {
+    background: #BE4F48;
+    color: white;
 }
 
+.right .dots div {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border: 1px solid #6C5C5C;
+    border-radius: 6px;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0 3px;
+    /*position: relative;*/
+    /*top: -12px;*/
+    position: relative;
+    top: 458px
+}
+
+/*.right .dots div:hover {*/
+/*    background: #6C5C5C;*/
+/*}*/
+
+.right > input {
+    width: 12px;
+    height: 12px;
+    margin: 0 3px 0 3px;
+    z-index: 10;
+    position: relative;
+    top: 470px;
+    opacity: 0;
+}
+
+.wrapper div {
+    display: none;
+}
+
+.right > input[type="radio"]:nth-of-type(1):checked ~ .wrapper div:nth-of-type(1) {
+    display: block;
+}
+
+.right > input[type="radio"]:nth-of-type(2):checked ~ .wrapper div:nth-of-type(2) {
+    display: block;
+}
+
+.right > input[type="radio"]:nth-of-type(3):checked ~ .wrapper div:nth-of-type(3) {
+    display: block;
+}
+
+.right > input[type="radio"]:nth-of-type(1):checked ~ .dots div:nth-of-type(1) {
+    background: #6C5C5C;
+}
+
+.right > input[type="radio"]:nth-of-type(2):checked ~ .dots div:nth-of-type(2) {
+    background: #6C5C5C;
+}
+
+.right > input[type="radio"]:nth-of-type(3):checked ~ .dots div:nth-of-type(3) {
+    background: #6C5C5C;
+}
+
+/*part7*/
+.part6 {
+    overflow: hidden;
+    position: relative;
+}
+
+.part6 p {
+    font-size: 20px;
+}
+
+.part6 > div {
+    width: 34%;
+    height: 520px;
+    text-align: center;
+    float: left;
+    /*margin: 0 auto;*/
+}
+
+.part6 .container div {
+    font-size: 20px;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+}
+
+.part6 img {
+    width: 32%;
+    height: 520px;
+    float: left;
+}
+
+.part6 div:nth-child(1) {
+    background: #E84E4C;
+    color: white;
+}
+
+.part6 div:nth-child(2) {
+    background: white;
+}
+
+.part6 .container:nth-child(1) div {
+    border: 1px solid white;
+}
+
+.part6 .container:nth-child(1) div:hover {
+    background: white;
+    color: #E84E4C;
+}
+
+.part6 .container:nth-child(2) div {
+    border: 1px solid #E84E4C;
+    color: #E84E4C;
+}
+
+.part6 .container:nth-child(2) div:hover {
+    background: #E84E4C;
+    color: white;
+}
+
+.part6 .container p:nth-child(1) {
+    margin-top: 200px;
+    margin-bottom: 10px;
+}
+
+.part6 .container span {
+    width: 30px;
+    display: inline-block;
+    border: 1px solid white;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.part6 .container:nth-child(2) span {
+    border: 1px solid #E84E4C;
+}
+
+.part6 .container:nth-child(2)::after {
+    content: "";
+    border: 30px solid;
+    border-color: transparent transparent transparent white;
+    position: absolute;
+    left: 68%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*part7*/
+.part7 {
+    height: 800px;
+    background: white;
+    text-align: center;
+}
+
+.part7 .top{
+    padding-top: 100px;
+    height: 200px;
+}
+
+.part7 .top p:nth-child(1) {
+    font-size: 18px;
+}
+
+.part7 .top p:nth-of-type(2) {
+    font-size: 14px;
+    color: #B3AFAC;
+    margin-top: 40px;
+}
+
+.part7 .top span {
+    width: 30px;
+    height: 0;
+    margin-top: 10px;
+    border: 1px solid #E44F4B;
+    display: inline-block;
+}
+
+.part7 .left div p:nth-of-type(1){
+    text-align: left;
+    font-size: 16px;
+    color: #6C5C5C;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.part7 .left div p:nth-of-type(2),.part7 .left div p:nth-of-type(3){
+    text-align: left;
+    font-size: 14px;
+    color: #B3AFAC;
+    /*width: 300px;*/
+}
+
+.part7 .left div p:last-child{
+    text-align: right;
+}
+
+.part7 .left div{
+    height: 130px;
+}
+
+.part7 .left{
+    width: 30%;
+    margin-right: 30px;
+}
+
+.part7 .right{
+    width: 640px;
+}
+
+.part7 .left,.part7 .right{
+    display: inline-block;
+    text-align: center;
+}
+
+.part7 .right input[type="text"]{
+    width: 300px;
+    height: 40px;
+    margin: 10px;
+    display: inline-block;
+    font-size: 14px;
+    color: #4E3A4F;
+    background: #E3E3E3;
+    border: 0;
+    text-indent: 1em;
+}
+
+.part7 .right textarea{
+    width: 620px;
+    height: 160px;
+    font-size: 14px;
+    color: #4E3A4F;
+    background: #E3E3E3;
+    border: 0;
+    font-family: "微软雅黑";
+    /*text-indent: 1em;*/
+    padding: 14px;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.part7 .right input[type="submit"]{
+    width: 620px;
+    height: 40px;
+    font-size: 14px;
+    color: #4E3A4F;
+    border: 0;
+}
+
+/*part8*/
+.part8{
+    height: 400px;
+    width: 100%;
+    background: #33363F;
+    text-align: center;
+    display: inline-block;
+}
+
+.part8 .message{
+    margin-top: 80px;
+    height: 150px;
+}
+
+.part8 .message p:nth-of-type(1){
+    font-size: 20px;
+    color: white;
+    margin:20px 0;
+}
+
+.part8 .message p:nth-of-type(2){
+    font-size: 14px;
+    color: white;
+    margin:14px 0;
+}
+
+.part8{
+    display: inline-block;
+}
+
+.part8 .submit-box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.part8 .submit-box .email{
+    width: 500px;
+    height: 40px;
+    font-size: 15px;
+    box-sizing: border-box;
+    border: none;
+    text-indent: 1em;
+}
+
+.part8 .submit-box .submit{
+    width: 100px;
+    height: 40px;
+    border: none;
+    box-sizing: border-box;
+    background: #75757F;
+    font-size: 16px;
+    color: white;
+}
+
+.part8 .icons{
+    margin-top: 30px;
+}
+
+.part8 .icons i{
+    font-size: 30px;
+    color: white;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+}
+
+footer{
+    height: 60px;
+    background: #30303A;
+}
+
+footer .message,.back{
+    width: 300px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 60px;
+    color: white;
+}
+
+footer .message{
+    float: left;
+}
+
+footer .back a{
+    font-size: 10px;
+    color: white;
+    /*list-style: none;*/
+    text-decoration: none;
+}
+footer .back{
+    float: right;
+}
 
