@@ -56,29 +56,38 @@ header {
     list-style: none;
     text-align: center;
     /*display: inline-block;*/
+    transition: color 0.4s ease-in-out;
 }
 
-.nav li:nth-of-type(2):hover~.move{
+.nav li:nth-child(2):hover ~ .move {
     left: 20%;
 }
-.nav li:nth-of-type(3):hover~.move{
+
+.nav li:nth-child(3):hover ~ .move {
     left: 40%;
 }
-.nav li:nth-of-type(4):hover~.move{
+
+.nav li:nth-child(4):hover ~ .move {
     left: 60%;
 }
-.nav li:nth-of-type(5):hover~.move{
+
+.nav li:nth-child(5):hover ~ .move {
     left: 80%;
 }
 
-.nav .move{
+.nav  ul li:hover {
+    color: #E53C3C;
+}
+
+.nav .move {
     border: 2px solid #E53C3C;
     box-sizing: border-box;
     height: 0;
     position: absolute;
-    top:56px;
+    top: 56px;
+    -webkit-transition: left 0.4s ease-in-out;
     transition: left 0.4s ease-in-out;
-    /*-webkit-transition: left 0.4s ease-in-out;*/
+    left: 0;
 }
 
 .avator {
@@ -682,7 +691,7 @@ header {
     text-align: center;
 }
 
-.part7 .top{
+.part7 .top {
     padding-top: 100px;
     height: 200px;
 }
@@ -705,7 +714,7 @@ header {
     display: inline-block;
 }
 
-.part7 .left div p:nth-of-type(1){
+.part7 .left div p:nth-of-type(1) {
     text-align: left;
     font-size: 16px;
     color: #6C5C5C;
@@ -713,36 +722,36 @@ header {
     margin-bottom: 10px;
 }
 
-.part7 .left div p:nth-of-type(2),.part7 .left div p:nth-of-type(3){
+.part7 .left div p:nth-of-type(2), .part7 .left div p:nth-of-type(3) {
     text-align: left;
     font-size: 14px;
     color: #B3AFAC;
     /*width: 300px;*/
 }
 
-.part7 .left div p:last-child{
+.part7 .left div p:last-child {
     text-align: right;
 }
 
-.part7 .left div{
+.part7 .left div {
     height: 130px;
 }
 
-.part7 .left{
+.part7 .left {
     width: 30%;
     margin-right: 30px;
 }
 
-.part7 .right{
+.part7 .right {
     width: 640px;
 }
 
-.part7 .left,.part7 .right{
+.part7 .left, .part7 .right {
     display: inline-block;
     text-align: center;
 }
 
-.part7 .right input[type="text"]{
+.part7 .right input[type="text"] {
     width: 300px;
     height: 40px;
     margin: 10px;
@@ -754,7 +763,7 @@ header {
     text-indent: 1em;
 }
 
-.part7 .right textarea{
+.part7 .right textarea {
     width: 620px;
     height: 160px;
     font-size: 14px;
@@ -768,7 +777,7 @@ header {
     margin: 10px;
 }
 
-.part7 .right input[type="submit"]{
+.part7 .right input[type="submit"] {
     width: 620px;
     height: 40px;
     font-size: 14px;
@@ -777,7 +786,7 @@ header {
 }
 
 /*part8*/
-.part8{
+.part8 {
     height: 400px;
     width: 100%;
     background: #33363F;
@@ -785,35 +794,35 @@ header {
     display: inline-block;
 }
 
-.part8 .message{
+.part8 .message {
     margin-top: 80px;
     height: 150px;
 }
 
-.part8 .message p:nth-of-type(1){
+.part8 .message p:nth-of-type(1) {
     font-size: 20px;
     color: white;
-    margin:20px 0;
+    margin: 20px 0;
 }
 
-.part8 .message p:nth-of-type(2){
+.part8 .message p:nth-of-type(2) {
     font-size: 14px;
     color: white;
-    margin:14px 0;
+    margin: 14px 0;
 }
 
-.part8{
+.part8 {
     display: inline-block;
 }
 
-.part8 .submit-box{
+.part8 .submit-box {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 
-.part8 .submit-box .email{
+.part8 .submit-box .email {
     width: 500px;
     height: 40px;
     font-size: 15px;
@@ -822,7 +831,7 @@ header {
     text-indent: 1em;
 }
 
-.part8 .submit-box .submit{
+.part8 .submit-box .submit {
     width: 100px;
     height: 40px;
     border: none;
@@ -832,24 +841,31 @@ header {
     color: white;
 }
 
-.part8 .icons{
+.part8 .icons {
     margin-top: 30px;
 }
 
-.part8 .icons i{
+.part8 .icons i {
+    display: inline-block;
+    vertical-align: top;
     font-size: 30px;
     color: white;
     width: 50px;
     height: 50px;
     line-height: 50px;
+    transition: font-size 0.4s ease-in-out;
 }
 
-footer{
+.part8 .icons i:hover{
+    font-size: 35px;
+}
+
+footer {
     height: 60px;
     background: #30303A;
 }
 
-footer .message,.back{
+footer .message, .back {
     width: 300px;
     text-align: center;
     font-size: 10px;
@@ -857,17 +873,18 @@ footer .message,.back{
     color: white;
 }
 
-footer .message{
+footer .message {
     float: left;
 }
 
-footer .back a{
+footer .back a {
     font-size: 10px;
     color: white;
     /*list-style: none;*/
     text-decoration: none;
 }
-footer .back{
+
+footer .back {
     float: right;
 }
 
