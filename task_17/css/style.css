@@ -1,0 +1,30 @@
+.aqi-chart-wrap{
+    display: flex;
+    align-items: flex-end;
+    height: 600px;
+    width: 90%;
+    overflow: hidden;
+    margin:0 auto;
+}
+
+.aqi-chart-wrap div{
+    flex: 1;
+    animation: heightAnim .5s ease-in-out;
+    position: relative;
+    bottom: 0;
+    /*bottom: -300px*/
+}
+
+@keyframes heightAnim {
+    0% {
+        bottom: -300px;
+    }
+    100% {
+        margin-top: 0;
+    }
+
+}
+
+.aqi-chart-wrap div:last-child{
+    margin-right: 0;
+}
