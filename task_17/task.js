@@ -57,15 +57,28 @@ function getWeekData(cityData) {
     let weekIndex = 1;
     let accuNum = 0;
     let accuDay = 0;
+    let currentMonth = 1;
+    let datYear = NaN;
 
     for (let key in cityData) {
         let dat = new Date(key);
-        let datDay = dat.getDay();
+
+        if (!datYear) {
+            datYear = dat.getFullYear();
+        }
+        let datDay = dat.getDay() + 1;
+        let datMon = dat.getMonth() + 1;
 
         accuNum += cityData[key];
         accuDay += 1;
-        if (datDay === 6) {
-            weekData[weekIndex] = Math.ceil(accuNum / accuDay);
+
+        if (datMon !== currentMonth) {
+            currentMonth = datMon;
+            weekIndex = 1;
+        }
+
+        if (datDay === 7) {
+            weekData[`${datYear}-${currentMonth}-${weekIndex}`] = Math.ceil(accuNum / accuDay);
             accuNum = 0;
             accuDay = 0;
             weekIndex += 1;
@@ -75,7 +88,7 @@ function getWeekData(cityData) {
 
     //如果最后一天不是周日，还有数据没有添加
     if (accuDay !== 0) {
-        weekData[weekIndex] = Math.ceil(accuNum / accuDay);
+        weekData[`${datYear}-${currentMonth}-${weekIndex}`] = Math.ceil(accuNum / accuDay);
     }
     return weekData;
 }
@@ -88,14 +101,14 @@ function getMonthData(cityData) {
 
     for (let key in cityData) {
         let dat = new Date(key);
-        let datMonth = dat.getMonth();
+        let datMonth = dat.getMonth() + 1;
         if (currentMonth == null) {
             currentMonth = datMonth;
         }
 
         //新的一月，结算月份，清零数据
         if (datMonth !== currentMonth) {
-            monthData[currentMonth] = Math.ceil(accuNum / accuDay);
+            monthData[`2016-${currentMonth}`] = Math.ceil(accuNum / accuDay);
             currentMonth = datMonth;
             accuNum = 0;
             accuDay = 0;
@@ -105,7 +118,7 @@ function getMonthData(cityData) {
     }
 
     //出现新月份才会清零，但是新月份出现会加入第一天的数据，所以0/0的情况永远不会出现
-    monthData[currentMonth] = Math.ceil(accuNum / accuDay);
+    monthData[`2016-${currentMonth}`] = Math.ceil(accuNum / accuDay);
     return monthData;
 }
 
@@ -118,6 +131,7 @@ var colors = ['#16324a', '#24385e', '#393f65', '#4e4a67', '#5a4563', '#b38e95',
 function renderChart() {
     let container = document.querySelector(".aqi-chart-wrap");
     container.innerHTML = "";
+    let containerWidth = container.clientWidth;
 
     let count = 0;
     for (let key in chartData) {
@@ -125,21 +139,37 @@ function renderChart() {
         newElement.style.title = chartData[key];
         newElement.style.height = `${chartData[key]}px`;
         newElement.style.backgroundColor = `${colors[count % 12]}`;
+        newElement.className = "histo";
+
+        //hint
+        let hint = document.createElement("div");
+        hint.innerHTML = `${key}<br>[AQI]:${chartData[key]}`;
+        hint.className = "hint";
 
         container.appendChild(newElement);
+        container.appendChild(hint);
+        let length = Object.keys(chartData).length
+        let eleWidth = container.clientWidth / (2 * length - 1);
+        hint.style.left = `${eleWidth * count * 2 + eleWidth / 2 - 60}px`
+        if (parseInt(hint.style.left) < 10) {
+            hint.style.left = 10 + 'px'
+        }
+
+        if (parseInt(hint.style.left) > containerWidth - 130) {
+            hint.style.left = containerWidth - 130 + "px";
+        }
+
+        hint.style.bottom = `${chartData[key] + 20}px`;
         count++;
     }
 
-    let children = container.childNodes
-    let containerWidth = container.clientWidth;
-    for (let i = 0; i < children.length; i++) {
+
+    let histoArray = document.getElementsByClassName("histo");
+    for (let i = 0; i < histoArray.length; i++) {
         let marginRight = containerWidth / (2 * count - 1);
-        console.log(marginRight);
-
-        if(i!==children.length-1){
-            children[i].style.marginRight = `${marginRight}px`;
+        if (i !== count - 1) {
+            histoArray[i].style.marginRight = `${marginRight}px`;
         }
-
     }
 }
 
