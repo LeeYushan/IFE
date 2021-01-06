@@ -1,0 +1,15 @@
+#result{
+    display: flex;
+}
+
+#result div{
+    height: 30px;
+    line-height: 30px;
+    margin: 5px;
+    background-color: pink;
+    text-align: center;
+}
+
+#result div span{
+    background-color: red;
+}

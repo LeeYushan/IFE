@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    vertical-align: bottom;
+    margin-top: 10px;
+    font-size: 0;
+}
+
+li{
+    margin-left: 5px;
+    width: 15px;
+    background-color: darkred;
+    display: inline-block;
+    list-style-type: none;
+}
