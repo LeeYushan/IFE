@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei", serif;
+}
+
+section{
+    width: 800px;
+    margin: 50px auto;
+    border: 2px solid #9da6bd;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #dddddd;
+}
+
+label{
+    display: block;
+    margin-bottom: 10px;
+}
+
+#hobby-input,#tag-input{
+    display: block;
+    width: 100%;
+    border: 2px solid #9da6bd;
+    outline: none;
+}
+
+#tag-input{
+    padding: 10px;
+}
+
+#hobby-input{
+    padding: 10px;
+    min-height: 100px;
+    resize: none;
+}
+
+.list{
+    height: 50px;
+    list-style: none;
+}
+
+.list li{
+    display: inline-block;
+    margin: 10px 10px 5px 0;
+    background-color: #9da6bd;
+    color: white;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.list li:hover{
+    /*height: 40px;*/
+    cursor: pointer;
+}
+
+.list li:hover:before{
+    content: "[编辑]";
+    padding-right: 5px;
+    color: #c20404;
+    font-size: 0.75rem;
+    line-height: 30px;
+}
+
+button{
+    margin-top: 20px;
+    width: 80px;
+    height: 30px;
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid #9da6bd;
+    font-size: 0.75rem;
+    outline: none;
+}
+
+button:hover{
+    background-color: #9da6bd;
+    color: white;
+    cursor: pointer;
+}
