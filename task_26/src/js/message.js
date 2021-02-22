@@ -25,7 +25,7 @@ class Accepter {
         })
     }
 
-    add(cb) {
+    accept(cb) {
         this.listeners.push(cb);
         return () => {
             this.remove(cb);

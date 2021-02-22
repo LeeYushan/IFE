@@ -2,7 +2,7 @@ import {log} from "./utils";
 import {SpaceplaneElement} from "./element";
 import $ from 'jquery';
 
-export class spaceship {
+export class Spaceship {
     runTimer = null;
 
     constructor(id, config) {
@@ -15,7 +15,7 @@ export class spaceship {
             accepter: null
         }, config)
 
-        this.accepterRemove = this.cfg.accepter.add((msg) => {
+        this.accepterRemove = this.cfg.accepter.accept((msg) => {
             if (msg.type === 1 && msg.id === this.id) {
                 log(`${this.id}号飞船收到消息`, msg, 'blue')
                 switch (msg.command) {
